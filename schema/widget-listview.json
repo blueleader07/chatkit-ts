@@ -1,0 +1,6522 @@
+{
+  "$defs": {
+    "ActionConfig": {
+      "deprecated": true,
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "payload": {
+          "default": null,
+          "title": "Payload"
+        },
+        "handler": {
+          "default": "server",
+          "enum": [
+            "client",
+            "server"
+          ],
+          "title": "Handler",
+          "type": "string"
+        },
+        "loadingBehavior": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "none",
+            "self",
+            "container"
+          ],
+          "title": "Loadingbehavior",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "ActionConfig",
+      "type": "object"
+    },
+    "AreaSeries": {
+      "deprecated": true,
+      "description": "An area series plotted from a numeric `dataKey`. Supports stacking and curves.",
+      "properties": {
+        "type": {
+          "const": "area",
+          "default": "area",
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label"
+        },
+        "dataKey": {
+          "title": "Datakey",
+          "type": "string"
+        },
+        "stack": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stack"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "curveType": {
+          "anyOf": [
+            {
+              "enum": [
+                "basis",
+                "basisClosed",
+                "basisOpen",
+                "bumpX",
+                "bumpY",
+                "bump",
+                "linear",
+                "linearClosed",
+                "natural",
+                "monotoneX",
+                "monotoneY",
+                "monotone",
+                "step",
+                "stepBefore",
+                "stepAfter"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Curvetype"
+        }
+      },
+      "required": [
+        "label",
+        "dataKey"
+      ],
+      "title": "AreaSeries",
+      "type": "object"
+    },
+    "Badge": {
+      "deprecated": true,
+      "description": "Small badge indicating status or categorization.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Badge",
+          "default": "Badge",
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "enum": [
+                "secondary",
+                "success",
+                "danger",
+                "warning",
+                "info",
+                "discovery"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "solid",
+                "soft",
+                "outline"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "sm",
+                "md",
+                "lg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "pill": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pill"
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "title": "Badge",
+      "type": "object"
+    },
+    "BarSeries": {
+      "deprecated": true,
+      "description": "A bar series plotted from a numeric `dataKey`. Supports stacking.",
+      "properties": {
+        "type": {
+          "const": "bar",
+          "default": "bar",
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label"
+        },
+        "dataKey": {
+          "title": "Datakey",
+          "type": "string"
+        },
+        "stack": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stack"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        }
+      },
+      "required": [
+        "label",
+        "dataKey"
+      ],
+      "title": "BarSeries",
+      "type": "object"
+    },
+    "Border": {
+      "deprecated": true,
+      "description": "Border style definition for an edge.",
+      "properties": {
+        "size": {
+          "title": "Size",
+          "type": "integer"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            }
+          ],
+          "title": "Color"
+        },
+        "style": {
+          "enum": [
+            "solid",
+            "dashed",
+            "dotted",
+            "double",
+            "groove",
+            "ridge",
+            "inset",
+            "outset"
+          ],
+          "title": "Style",
+          "type": "string"
+        }
+      },
+      "required": [
+        "size"
+      ],
+      "title": "Border",
+      "type": "object"
+    },
+    "Borders": {
+      "deprecated": true,
+      "description": "Composite border configuration applied across edges.",
+      "properties": {
+        "top": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "Top"
+        },
+        "right": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "Right"
+        },
+        "bottom": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "Bottom"
+        },
+        "left": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "Left"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            }
+          ],
+          "title": "Y"
+        }
+      },
+      "title": "Borders",
+      "type": "object"
+    },
+    "Box": {
+      "deprecated": true,
+      "description": "Generic flex container with direction control.",
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "discriminator": {
+                      "mapping": {
+                        "Badge": "#/$defs/Badge",
+                        "Box": "#/$defs/Box",
+                        "Button": "#/$defs/Button",
+                        "Caption": "#/$defs/Caption",
+                        "Chart": "#/$defs/Chart",
+                        "Checkbox": "#/$defs/Checkbox",
+                        "Col": "#/$defs/Col",
+                        "DatePicker": "#/$defs/DatePicker",
+                        "Divider": "#/$defs/Divider",
+                        "Form": "#/$defs/Form",
+                        "Icon": "#/$defs/Icon",
+                        "Image": "#/$defs/Image",
+                        "Input": "#/$defs/Input",
+                        "Label": "#/$defs/Label",
+                        "ListViewItem": "#/$defs/ListViewItem",
+                        "Markdown": "#/$defs/Markdown",
+                        "RadioGroup": "#/$defs/RadioGroup",
+                        "Row": "#/$defs/Row",
+                        "Select": "#/$defs/Select",
+                        "Spacer": "#/$defs/Spacer",
+                        "Text": "#/$defs/Text",
+                        "Textarea": "#/$defs/Textarea",
+                        "Title": "#/$defs/Title",
+                        "Transition": "#/$defs/Transition"
+                      },
+                      "propertyName": "type"
+                    },
+                    "oneOf": [
+                      {
+                        "$ref": "#/$defs/Text"
+                      },
+                      {
+                        "$ref": "#/$defs/Title"
+                      },
+                      {
+                        "$ref": "#/$defs/Caption"
+                      },
+                      {
+                        "$ref": "#/$defs/Chart"
+                      },
+                      {
+                        "$ref": "#/$defs/Badge"
+                      },
+                      {
+                        "$ref": "#/$defs/Markdown"
+                      },
+                      {
+                        "$ref": "#/$defs/Box"
+                      },
+                      {
+                        "$ref": "#/$defs/Row"
+                      },
+                      {
+                        "$ref": "#/$defs/Col"
+                      },
+                      {
+                        "$ref": "#/$defs/Divider"
+                      },
+                      {
+                        "$ref": "#/$defs/Icon"
+                      },
+                      {
+                        "$ref": "#/$defs/Image"
+                      },
+                      {
+                        "$ref": "#/$defs/ListViewItem"
+                      },
+                      {
+                        "$ref": "#/$defs/Button"
+                      },
+                      {
+                        "$ref": "#/$defs/Checkbox"
+                      },
+                      {
+                        "$ref": "#/$defs/Spacer"
+                      },
+                      {
+                        "$ref": "#/$defs/Select"
+                      },
+                      {
+                        "$ref": "#/$defs/DatePicker"
+                      },
+                      {
+                        "$ref": "#/$defs/Form"
+                      },
+                      {
+                        "$ref": "#/$defs/Input"
+                      },
+                      {
+                        "$ref": "#/$defs/Label"
+                      },
+                      {
+                        "$ref": "#/$defs/RadioGroup"
+                      },
+                      {
+                        "$ref": "#/$defs/Textarea"
+                      },
+                      {
+                        "$ref": "#/$defs/Transition"
+                      }
+                    ]
+                  },
+                  {
+                    "$ref": "#/$defs/DynamicWidgetComponent"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Children"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "baseline",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "justify": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "between",
+                "around",
+                "evenly",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Justify"
+        },
+        "wrap": {
+          "anyOf": [
+            {
+              "enum": [
+                "nowrap",
+                "wrap",
+                "wrap-reverse"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wrap"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Padding"
+        },
+        "margin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin"
+        },
+        "border": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            },
+            {
+              "$ref": "#/$defs/Borders"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Border"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "full",
+                "100%",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        },
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Box",
+          "default": "Box",
+          "title": "Type",
+          "type": "string"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "row",
+                "col"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        }
+      },
+      "title": "Box",
+      "type": "object"
+    },
+    "Button": {
+      "deprecated": true,
+      "description": "Button component optionally wired to an action.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Button",
+          "default": "Button",
+          "title": "Type",
+          "type": "string"
+        },
+        "submit": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Submit"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "onClickAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "iconStart": {
+          "anyOf": [
+            {
+              "enum": [
+                "agent",
+                "analytics",
+                "atom",
+                "batch",
+                "bolt",
+                "book-open",
+                "book-closed",
+                "book-clock",
+                "bug",
+                "calendar",
+                "chart",
+                "check",
+                "check-circle",
+                "check-circle-filled",
+                "chevron-left",
+                "chevron-right",
+                "circle-question",
+                "clock",
+                "compass",
+                "confetti",
+                "cube",
+                "desktop",
+                "document",
+                "dot",
+                "dots-horizontal",
+                "dots-vertical",
+                "empty-circle",
+                "external-link",
+                "globe",
+                "keys",
+                "lab",
+                "images",
+                "info",
+                "lifesaver",
+                "lightbulb",
+                "mail",
+                "map-pin",
+                "maps",
+                "mobile",
+                "name",
+                "notebook",
+                "notebook-pencil",
+                "page-blank",
+                "phone",
+                "play",
+                "plus",
+                "profile",
+                "profile-card",
+                "reload",
+                "star",
+                "star-filled",
+                "search",
+                "sparkle",
+                "sparkle-double",
+                "square-code",
+                "square-image",
+                "square-text",
+                "suitcase",
+                "settings-slider",
+                "user",
+                "wreath",
+                "write",
+                "write-alt",
+                "write-alt2"
+              ],
+              "type": "string"
+            },
+            {
+              "pattern": "^vendor:",
+              "type": "string"
+            },
+            {
+              "pattern": "^lucide:",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iconstart"
+        },
+        "iconEnd": {
+          "anyOf": [
+            {
+              "enum": [
+                "agent",
+                "analytics",
+                "atom",
+                "batch",
+                "bolt",
+                "book-open",
+                "book-closed",
+                "book-clock",
+                "bug",
+                "calendar",
+                "chart",
+                "check",
+                "check-circle",
+                "check-circle-filled",
+                "chevron-left",
+                "chevron-right",
+                "circle-question",
+                "clock",
+                "compass",
+                "confetti",
+                "cube",
+                "desktop",
+                "document",
+                "dot",
+                "dots-horizontal",
+                "dots-vertical",
+                "empty-circle",
+                "external-link",
+                "globe",
+                "keys",
+                "lab",
+                "images",
+                "info",
+                "lifesaver",
+                "lightbulb",
+                "mail",
+                "map-pin",
+                "maps",
+                "mobile",
+                "name",
+                "notebook",
+                "notebook-pencil",
+                "page-blank",
+                "phone",
+                "play",
+                "plus",
+                "profile",
+                "profile-card",
+                "reload",
+                "star",
+                "star-filled",
+                "search",
+                "sparkle",
+                "sparkle-double",
+                "square-code",
+                "square-image",
+                "square-text",
+                "suitcase",
+                "settings-slider",
+                "user",
+                "wreath",
+                "write",
+                "write-alt",
+                "write-alt2"
+              ],
+              "type": "string"
+            },
+            {
+              "pattern": "^vendor:",
+              "type": "string"
+            },
+            {
+              "pattern": "^lucide:",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iconend"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "enum": [
+                "primary",
+                "secondary"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Style"
+        },
+        "iconSize": {
+          "anyOf": [
+            {
+              "enum": [
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iconsize"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "enum": [
+                "primary",
+                "secondary",
+                "info",
+                "discovery",
+                "success",
+                "caution",
+                "warning",
+                "danger"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "solid",
+                "soft",
+                "outline",
+                "ghost"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "pill": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pill"
+        },
+        "uniform": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uniform"
+        },
+        "block": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        }
+      },
+      "title": "Button",
+      "type": "object"
+    },
+    "Caption": {
+      "deprecated": true,
+      "description": "Widget rendering supporting caption text.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Caption",
+          "default": "Caption",
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "enum": [
+                "normal",
+                "medium",
+                "semibold",
+                "bold"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weight"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "sm",
+                "md",
+                "lg"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "textAlign": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Textalign"
+        },
+        "truncate": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Truncate"
+        },
+        "maxLines": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxlines"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "Caption",
+      "type": "object"
+    },
+    "Chart": {
+      "deprecated": true,
+      "description": "Data visualization component for simple bar/line/area charts.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Chart",
+          "default": "Chart",
+          "title": "Type",
+          "type": "string"
+        },
+        "data": {
+          "items": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            },
+            "type": "object"
+          },
+          "title": "Data",
+          "type": "array"
+        },
+        "series": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "area": "#/$defs/AreaSeries",
+                "bar": "#/$defs/BarSeries",
+                "line": "#/$defs/LineSeries"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BarSeries"
+              },
+              {
+                "$ref": "#/$defs/AreaSeries"
+              },
+              {
+                "$ref": "#/$defs/LineSeries"
+              }
+            ]
+          },
+          "title": "Series",
+          "type": "array"
+        },
+        "xAxis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/XAxisConfig"
+            }
+          ],
+          "title": "Xaxis"
+        },
+        "showYAxis": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Showyaxis"
+        },
+        "showLegend": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Showlegend"
+        },
+        "showTooltip": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Showtooltip"
+        },
+        "barGap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bargap"
+        },
+        "barCategoryGap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Barcategorygap"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        }
+      },
+      "required": [
+        "data",
+        "series",
+        "xAxis"
+      ],
+      "title": "Chart",
+      "type": "object"
+    },
+    "Checkbox": {
+      "deprecated": true,
+      "description": "Checkbox input component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Checkbox",
+          "default": "Checkbox",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "defaultChecked": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultchecked"
+        },
+        "onChangeAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Checkbox",
+      "type": "object"
+    },
+    "Col": {
+      "deprecated": true,
+      "description": "Vertical flex container.",
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "discriminator": {
+                      "mapping": {
+                        "Badge": "#/$defs/Badge",
+                        "Box": "#/$defs/Box",
+                        "Button": "#/$defs/Button",
+                        "Caption": "#/$defs/Caption",
+                        "Chart": "#/$defs/Chart",
+                        "Checkbox": "#/$defs/Checkbox",
+                        "Col": "#/$defs/Col",
+                        "DatePicker": "#/$defs/DatePicker",
+                        "Divider": "#/$defs/Divider",
+                        "Form": "#/$defs/Form",
+                        "Icon": "#/$defs/Icon",
+                        "Image": "#/$defs/Image",
+                        "Input": "#/$defs/Input",
+                        "Label": "#/$defs/Label",
+                        "ListViewItem": "#/$defs/ListViewItem",
+                        "Markdown": "#/$defs/Markdown",
+                        "RadioGroup": "#/$defs/RadioGroup",
+                        "Row": "#/$defs/Row",
+                        "Select": "#/$defs/Select",
+                        "Spacer": "#/$defs/Spacer",
+                        "Text": "#/$defs/Text",
+                        "Textarea": "#/$defs/Textarea",
+                        "Title": "#/$defs/Title",
+                        "Transition": "#/$defs/Transition"
+                      },
+                      "propertyName": "type"
+                    },
+                    "oneOf": [
+                      {
+                        "$ref": "#/$defs/Text"
+                      },
+                      {
+                        "$ref": "#/$defs/Title"
+                      },
+                      {
+                        "$ref": "#/$defs/Caption"
+                      },
+                      {
+                        "$ref": "#/$defs/Chart"
+                      },
+                      {
+                        "$ref": "#/$defs/Badge"
+                      },
+                      {
+                        "$ref": "#/$defs/Markdown"
+                      },
+                      {
+                        "$ref": "#/$defs/Box"
+                      },
+                      {
+                        "$ref": "#/$defs/Row"
+                      },
+                      {
+                        "$ref": "#/$defs/Col"
+                      },
+                      {
+                        "$ref": "#/$defs/Divider"
+                      },
+                      {
+                        "$ref": "#/$defs/Icon"
+                      },
+                      {
+                        "$ref": "#/$defs/Image"
+                      },
+                      {
+                        "$ref": "#/$defs/ListViewItem"
+                      },
+                      {
+                        "$ref": "#/$defs/Button"
+                      },
+                      {
+                        "$ref": "#/$defs/Checkbox"
+                      },
+                      {
+                        "$ref": "#/$defs/Spacer"
+                      },
+                      {
+                        "$ref": "#/$defs/Select"
+                      },
+                      {
+                        "$ref": "#/$defs/DatePicker"
+                      },
+                      {
+                        "$ref": "#/$defs/Form"
+                      },
+                      {
+                        "$ref": "#/$defs/Input"
+                      },
+                      {
+                        "$ref": "#/$defs/Label"
+                      },
+                      {
+                        "$ref": "#/$defs/RadioGroup"
+                      },
+                      {
+                        "$ref": "#/$defs/Textarea"
+                      },
+                      {
+                        "$ref": "#/$defs/Transition"
+                      }
+                    ]
+                  },
+                  {
+                    "$ref": "#/$defs/DynamicWidgetComponent"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Children"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "baseline",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "justify": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "between",
+                "around",
+                "evenly",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Justify"
+        },
+        "wrap": {
+          "anyOf": [
+            {
+              "enum": [
+                "nowrap",
+                "wrap",
+                "wrap-reverse"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wrap"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Padding"
+        },
+        "margin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin"
+        },
+        "border": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            },
+            {
+              "$ref": "#/$defs/Borders"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Border"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "full",
+                "100%",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        },
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Col",
+          "default": "Col",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "title": "Col",
+      "type": "object"
+    },
+    "DatePicker": {
+      "deprecated": true,
+      "description": "Date picker input component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "DatePicker",
+          "default": "DatePicker",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "onChangeAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "placeholder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Placeholder"
+        },
+        "defaultValue": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultvalue"
+        },
+        "min": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min"
+        },
+        "max": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "solid",
+                "soft",
+                "outline",
+                "ghost"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "side": {
+          "anyOf": [
+            {
+              "enum": [
+                "top",
+                "bottom",
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Side"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "pill": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pill"
+        },
+        "block": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block"
+        },
+        "clearable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clearable"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "DatePicker",
+      "type": "object"
+    },
+    "Divider": {
+      "deprecated": true,
+      "description": "Visual divider separating content sections.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Divider",
+          "default": "Divider",
+          "title": "Type",
+          "type": "string"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "spacing": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Spacing"
+        },
+        "flush": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flush"
+        }
+      },
+      "title": "Divider",
+      "type": "object"
+    },
+    "DynamicWidgetComponent": {
+      "additionalProperties": true,
+      "description": "A widget component with a statically defined base shape but dynamically\ndefined additional fields loaded from a widget template or JSON schema.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DynamicWidgetComponent"
+            },
+            {
+              "items": {
+                "$ref": "#/$defs/DynamicWidgetComponent"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Children"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "DynamicWidgetComponent",
+      "type": "object"
+    },
+    "EditableProps": {
+      "deprecated": true,
+      "description": "Editable field options for text widgets.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "autoFocus": {
+          "title": "Autofocus",
+          "type": "boolean"
+        },
+        "autoSelect": {
+          "title": "Autoselect",
+          "type": "boolean"
+        },
+        "autoComplete": {
+          "title": "Autocomplete",
+          "type": "string"
+        },
+        "allowAutofillExtensions": {
+          "title": "Allowautofillextensions",
+          "type": "boolean"
+        },
+        "pattern": {
+          "title": "Pattern",
+          "type": "string"
+        },
+        "placeholder": {
+          "title": "Placeholder",
+          "type": "string"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "EditableProps",
+      "type": "object"
+    },
+    "Form": {
+      "deprecated": true,
+      "description": "Form wrapper capable of submitting ``onSubmitAction``.",
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "discriminator": {
+                      "mapping": {
+                        "Badge": "#/$defs/Badge",
+                        "Box": "#/$defs/Box",
+                        "Button": "#/$defs/Button",
+                        "Caption": "#/$defs/Caption",
+                        "Chart": "#/$defs/Chart",
+                        "Checkbox": "#/$defs/Checkbox",
+                        "Col": "#/$defs/Col",
+                        "DatePicker": "#/$defs/DatePicker",
+                        "Divider": "#/$defs/Divider",
+                        "Form": "#/$defs/Form",
+                        "Icon": "#/$defs/Icon",
+                        "Image": "#/$defs/Image",
+                        "Input": "#/$defs/Input",
+                        "Label": "#/$defs/Label",
+                        "ListViewItem": "#/$defs/ListViewItem",
+                        "Markdown": "#/$defs/Markdown",
+                        "RadioGroup": "#/$defs/RadioGroup",
+                        "Row": "#/$defs/Row",
+                        "Select": "#/$defs/Select",
+                        "Spacer": "#/$defs/Spacer",
+                        "Text": "#/$defs/Text",
+                        "Textarea": "#/$defs/Textarea",
+                        "Title": "#/$defs/Title",
+                        "Transition": "#/$defs/Transition"
+                      },
+                      "propertyName": "type"
+                    },
+                    "oneOf": [
+                      {
+                        "$ref": "#/$defs/Text"
+                      },
+                      {
+                        "$ref": "#/$defs/Title"
+                      },
+                      {
+                        "$ref": "#/$defs/Caption"
+                      },
+                      {
+                        "$ref": "#/$defs/Chart"
+                      },
+                      {
+                        "$ref": "#/$defs/Badge"
+                      },
+                      {
+                        "$ref": "#/$defs/Markdown"
+                      },
+                      {
+                        "$ref": "#/$defs/Box"
+                      },
+                      {
+                        "$ref": "#/$defs/Row"
+                      },
+                      {
+                        "$ref": "#/$defs/Col"
+                      },
+                      {
+                        "$ref": "#/$defs/Divider"
+                      },
+                      {
+                        "$ref": "#/$defs/Icon"
+                      },
+                      {
+                        "$ref": "#/$defs/Image"
+                      },
+                      {
+                        "$ref": "#/$defs/ListViewItem"
+                      },
+                      {
+                        "$ref": "#/$defs/Button"
+                      },
+                      {
+                        "$ref": "#/$defs/Checkbox"
+                      },
+                      {
+                        "$ref": "#/$defs/Spacer"
+                      },
+                      {
+                        "$ref": "#/$defs/Select"
+                      },
+                      {
+                        "$ref": "#/$defs/DatePicker"
+                      },
+                      {
+                        "$ref": "#/$defs/Form"
+                      },
+                      {
+                        "$ref": "#/$defs/Input"
+                      },
+                      {
+                        "$ref": "#/$defs/Label"
+                      },
+                      {
+                        "$ref": "#/$defs/RadioGroup"
+                      },
+                      {
+                        "$ref": "#/$defs/Textarea"
+                      },
+                      {
+                        "$ref": "#/$defs/Transition"
+                      }
+                    ]
+                  },
+                  {
+                    "$ref": "#/$defs/DynamicWidgetComponent"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Children"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "baseline",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "justify": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "between",
+                "around",
+                "evenly",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Justify"
+        },
+        "wrap": {
+          "anyOf": [
+            {
+              "enum": [
+                "nowrap",
+                "wrap",
+                "wrap-reverse"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wrap"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Padding"
+        },
+        "margin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin"
+        },
+        "border": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            },
+            {
+              "$ref": "#/$defs/Borders"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Border"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "full",
+                "100%",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        },
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Form",
+          "default": "Form",
+          "title": "Type",
+          "type": "string"
+        },
+        "onSubmitAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "row",
+                "col"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        }
+      },
+      "title": "Form",
+      "type": "object"
+    },
+    "Icon": {
+      "deprecated": true,
+      "description": "Icon component referencing a built-in icon name.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Icon",
+          "default": "Icon",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "enum": [
+                "agent",
+                "analytics",
+                "atom",
+                "batch",
+                "bolt",
+                "book-open",
+                "book-closed",
+                "book-clock",
+                "bug",
+                "calendar",
+                "chart",
+                "check",
+                "check-circle",
+                "check-circle-filled",
+                "chevron-left",
+                "chevron-right",
+                "circle-question",
+                "clock",
+                "compass",
+                "confetti",
+                "cube",
+                "desktop",
+                "document",
+                "dot",
+                "dots-horizontal",
+                "dots-vertical",
+                "empty-circle",
+                "external-link",
+                "globe",
+                "keys",
+                "lab",
+                "images",
+                "info",
+                "lifesaver",
+                "lightbulb",
+                "mail",
+                "map-pin",
+                "maps",
+                "mobile",
+                "name",
+                "notebook",
+                "notebook-pencil",
+                "page-blank",
+                "phone",
+                "play",
+                "plus",
+                "profile",
+                "profile-card",
+                "reload",
+                "star",
+                "star-filled",
+                "search",
+                "sparkle",
+                "sparkle-double",
+                "square-code",
+                "square-image",
+                "square-text",
+                "suitcase",
+                "settings-slider",
+                "user",
+                "wreath",
+                "write",
+                "write-alt",
+                "write-alt2"
+              ],
+              "type": "string"
+            },
+            {
+              "pattern": "^vendor:",
+              "type": "string"
+            },
+            {
+              "pattern": "^lucide:",
+              "type": "string"
+            }
+          ],
+          "title": "Name"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Icon",
+      "type": "object"
+    },
+    "Image": {
+      "deprecated": true,
+      "description": "Image component with sizing and fitting controls.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Image",
+          "default": "Image",
+          "title": "Type",
+          "type": "string"
+        },
+        "src": {
+          "title": "Src",
+          "type": "string"
+        },
+        "alt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Alt"
+        },
+        "fit": {
+          "anyOf": [
+            {
+              "enum": [
+                "cover",
+                "contain",
+                "fill",
+                "scale-down",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fit"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "enum": [
+                "top left",
+                "top",
+                "top right",
+                "left",
+                "center",
+                "right",
+                "bottom left",
+                "bottom",
+                "bottom right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Position"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "full",
+                "100%",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "frame": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame"
+        },
+        "flush": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flush"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "margin": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        }
+      },
+      "required": [
+        "src"
+      ],
+      "title": "Image",
+      "type": "object"
+    },
+    "Input": {
+      "deprecated": true,
+      "description": "Single-line text input component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Input",
+          "default": "Input",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "inputType": {
+          "anyOf": [
+            {
+              "enum": [
+                "number",
+                "email",
+                "text",
+                "password",
+                "tel",
+                "url"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Inputtype"
+        },
+        "defaultValue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultvalue"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required"
+        },
+        "pattern": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pattern"
+        },
+        "placeholder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Placeholder"
+        },
+        "allowAutofillExtensions": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Allowautofillextensions"
+        },
+        "autoSelect": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autoselect"
+        },
+        "autoFocus": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autofocus"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "soft",
+                "outline"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "gutterSize": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Guttersize"
+        },
+        "pill": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pill"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "Label": {
+      "deprecated": true,
+      "description": "Form label associated with a field.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Label",
+          "default": "Label",
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "fieldName": {
+          "title": "Fieldname",
+          "type": "string"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "enum": [
+                "normal",
+                "medium",
+                "semibold",
+                "bold"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weight"
+        },
+        "textAlign": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Textalign"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        }
+      },
+      "required": [
+        "value",
+        "fieldName"
+      ],
+      "title": "Label",
+      "type": "object"
+    },
+    "LineSeries": {
+      "deprecated": true,
+      "description": "A line series plotted from a numeric `dataKey`. Supports curves.",
+      "properties": {
+        "type": {
+          "const": "line",
+          "default": "line",
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label"
+        },
+        "dataKey": {
+          "title": "Datakey",
+          "type": "string"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "curveType": {
+          "anyOf": [
+            {
+              "enum": [
+                "basis",
+                "basisClosed",
+                "basisOpen",
+                "bumpX",
+                "bumpY",
+                "bump",
+                "linear",
+                "linearClosed",
+                "natural",
+                "monotoneX",
+                "monotoneY",
+                "monotone",
+                "step",
+                "stepBefore",
+                "stepAfter"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Curvetype"
+        }
+      },
+      "required": [
+        "label",
+        "dataKey"
+      ],
+      "title": "LineSeries",
+      "type": "object"
+    },
+    "ListViewItem": {
+      "deprecated": true,
+      "description": "Single row inside a ``ListView`` component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "ListViewItem",
+          "default": "ListViewItem",
+          "title": "Type",
+          "type": "string"
+        },
+        "children": {
+          "items": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "Badge": "#/$defs/Badge",
+                    "Box": "#/$defs/Box",
+                    "Button": "#/$defs/Button",
+                    "Caption": "#/$defs/Caption",
+                    "Chart": "#/$defs/Chart",
+                    "Checkbox": "#/$defs/Checkbox",
+                    "Col": "#/$defs/Col",
+                    "DatePicker": "#/$defs/DatePicker",
+                    "Divider": "#/$defs/Divider",
+                    "Form": "#/$defs/Form",
+                    "Icon": "#/$defs/Icon",
+                    "Image": "#/$defs/Image",
+                    "Input": "#/$defs/Input",
+                    "Label": "#/$defs/Label",
+                    "ListViewItem": "#/$defs/ListViewItem",
+                    "Markdown": "#/$defs/Markdown",
+                    "RadioGroup": "#/$defs/RadioGroup",
+                    "Row": "#/$defs/Row",
+                    "Select": "#/$defs/Select",
+                    "Spacer": "#/$defs/Spacer",
+                    "Text": "#/$defs/Text",
+                    "Textarea": "#/$defs/Textarea",
+                    "Title": "#/$defs/Title",
+                    "Transition": "#/$defs/Transition"
+                  },
+                  "propertyName": "type"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/Text"
+                  },
+                  {
+                    "$ref": "#/$defs/Title"
+                  },
+                  {
+                    "$ref": "#/$defs/Caption"
+                  },
+                  {
+                    "$ref": "#/$defs/Chart"
+                  },
+                  {
+                    "$ref": "#/$defs/Badge"
+                  },
+                  {
+                    "$ref": "#/$defs/Markdown"
+                  },
+                  {
+                    "$ref": "#/$defs/Box"
+                  },
+                  {
+                    "$ref": "#/$defs/Row"
+                  },
+                  {
+                    "$ref": "#/$defs/Col"
+                  },
+                  {
+                    "$ref": "#/$defs/Divider"
+                  },
+                  {
+                    "$ref": "#/$defs/Icon"
+                  },
+                  {
+                    "$ref": "#/$defs/Image"
+                  },
+                  {
+                    "$ref": "#/$defs/ListViewItem"
+                  },
+                  {
+                    "$ref": "#/$defs/Button"
+                  },
+                  {
+                    "$ref": "#/$defs/Checkbox"
+                  },
+                  {
+                    "$ref": "#/$defs/Spacer"
+                  },
+                  {
+                    "$ref": "#/$defs/Select"
+                  },
+                  {
+                    "$ref": "#/$defs/DatePicker"
+                  },
+                  {
+                    "$ref": "#/$defs/Form"
+                  },
+                  {
+                    "$ref": "#/$defs/Input"
+                  },
+                  {
+                    "$ref": "#/$defs/Label"
+                  },
+                  {
+                    "$ref": "#/$defs/RadioGroup"
+                  },
+                  {
+                    "$ref": "#/$defs/Textarea"
+                  },
+                  {
+                    "$ref": "#/$defs/Transition"
+                  }
+                ]
+              },
+              {
+                "$ref": "#/$defs/DynamicWidgetComponent"
+              }
+            ]
+          },
+          "title": "Children",
+          "type": "array"
+        },
+        "onClickAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "baseline",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "ListViewItem",
+      "type": "object"
+    },
+    "Markdown": {
+      "deprecated": true,
+      "description": "Widget rendering Markdown content, optionally streamed.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Markdown",
+          "default": "Markdown",
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "streaming": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Streaming"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "Markdown",
+      "type": "object"
+    },
+    "RadioGroup": {
+      "deprecated": true,
+      "description": "Grouped radio input control.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "RadioGroup",
+          "default": "RadioGroup",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "options": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/RadioOption"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Options"
+        },
+        "ariaLabel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Arialabel"
+        },
+        "onChangeAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "defaultValue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultvalue"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "row",
+                "col"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "RadioGroup",
+      "type": "object"
+    },
+    "RadioOption": {
+      "deprecated": true,
+      "description": "Option inside a ``RadioGroup`` widget.",
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "disabled": {
+          "title": "Disabled",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "label",
+        "value"
+      ],
+      "title": "RadioOption",
+      "type": "object"
+    },
+    "Row": {
+      "deprecated": true,
+      "description": "Horizontal flex container.",
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "discriminator": {
+                      "mapping": {
+                        "Badge": "#/$defs/Badge",
+                        "Box": "#/$defs/Box",
+                        "Button": "#/$defs/Button",
+                        "Caption": "#/$defs/Caption",
+                        "Chart": "#/$defs/Chart",
+                        "Checkbox": "#/$defs/Checkbox",
+                        "Col": "#/$defs/Col",
+                        "DatePicker": "#/$defs/DatePicker",
+                        "Divider": "#/$defs/Divider",
+                        "Form": "#/$defs/Form",
+                        "Icon": "#/$defs/Icon",
+                        "Image": "#/$defs/Image",
+                        "Input": "#/$defs/Input",
+                        "Label": "#/$defs/Label",
+                        "ListViewItem": "#/$defs/ListViewItem",
+                        "Markdown": "#/$defs/Markdown",
+                        "RadioGroup": "#/$defs/RadioGroup",
+                        "Row": "#/$defs/Row",
+                        "Select": "#/$defs/Select",
+                        "Spacer": "#/$defs/Spacer",
+                        "Text": "#/$defs/Text",
+                        "Textarea": "#/$defs/Textarea",
+                        "Title": "#/$defs/Title",
+                        "Transition": "#/$defs/Transition"
+                      },
+                      "propertyName": "type"
+                    },
+                    "oneOf": [
+                      {
+                        "$ref": "#/$defs/Text"
+                      },
+                      {
+                        "$ref": "#/$defs/Title"
+                      },
+                      {
+                        "$ref": "#/$defs/Caption"
+                      },
+                      {
+                        "$ref": "#/$defs/Chart"
+                      },
+                      {
+                        "$ref": "#/$defs/Badge"
+                      },
+                      {
+                        "$ref": "#/$defs/Markdown"
+                      },
+                      {
+                        "$ref": "#/$defs/Box"
+                      },
+                      {
+                        "$ref": "#/$defs/Row"
+                      },
+                      {
+                        "$ref": "#/$defs/Col"
+                      },
+                      {
+                        "$ref": "#/$defs/Divider"
+                      },
+                      {
+                        "$ref": "#/$defs/Icon"
+                      },
+                      {
+                        "$ref": "#/$defs/Image"
+                      },
+                      {
+                        "$ref": "#/$defs/ListViewItem"
+                      },
+                      {
+                        "$ref": "#/$defs/Button"
+                      },
+                      {
+                        "$ref": "#/$defs/Checkbox"
+                      },
+                      {
+                        "$ref": "#/$defs/Spacer"
+                      },
+                      {
+                        "$ref": "#/$defs/Select"
+                      },
+                      {
+                        "$ref": "#/$defs/DatePicker"
+                      },
+                      {
+                        "$ref": "#/$defs/Form"
+                      },
+                      {
+                        "$ref": "#/$defs/Input"
+                      },
+                      {
+                        "$ref": "#/$defs/Label"
+                      },
+                      {
+                        "$ref": "#/$defs/RadioGroup"
+                      },
+                      {
+                        "$ref": "#/$defs/Textarea"
+                      },
+                      {
+                        "$ref": "#/$defs/Transition"
+                      }
+                    ]
+                  },
+                  {
+                    "$ref": "#/$defs/DynamicWidgetComponent"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Children"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "baseline",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Align"
+        },
+        "justify": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end",
+                "between",
+                "around",
+                "evenly",
+                "stretch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Justify"
+        },
+        "wrap": {
+          "anyOf": [
+            {
+              "enum": [
+                "nowrap",
+                "wrap",
+                "wrap-reverse"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wrap"
+        },
+        "flex": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Flex"
+        },
+        "gap": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gap"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "minHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minheight"
+        },
+        "minWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minwidth"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        },
+        "maxHeight": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxheight"
+        },
+        "maxWidth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxwidth"
+        },
+        "maxSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxsize"
+        },
+        "padding": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Padding"
+        },
+        "margin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/Spacing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Margin"
+        },
+        "border": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "$ref": "#/$defs/Border"
+            },
+            {
+              "$ref": "#/$defs/Borders"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Border"
+        },
+        "radius": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "full",
+                "100%",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Radius"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Background"
+        },
+        "aspectRatio": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aspectratio"
+        },
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Row",
+          "default": "Row",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "title": "Row",
+      "type": "object"
+    },
+    "Select": {
+      "deprecated": true,
+      "description": "Select dropdown component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Select",
+          "default": "Select",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/SelectOption"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "onChangeAction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ActionConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "placeholder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Placeholder"
+        },
+        "defaultValue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultvalue"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "solid",
+                "soft",
+                "outline",
+                "ghost"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "pill": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pill"
+        },
+        "block": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block"
+        },
+        "clearable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clearable"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        },
+        "searchable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Searchable"
+        }
+      },
+      "required": [
+        "name",
+        "options"
+      ],
+      "title": "Select",
+      "type": "object"
+    },
+    "SelectOption": {
+      "deprecated": true,
+      "description": "Selectable option used by the ``Select`` widget.",
+      "properties": {
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "disabled": {
+          "title": "Disabled",
+          "type": "boolean"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "label"
+      ],
+      "title": "SelectOption",
+      "type": "object"
+    },
+    "Spacer": {
+      "deprecated": true,
+      "description": "Flexible spacer used to push content apart.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Spacer",
+          "default": "Spacer",
+          "title": "Type",
+          "type": "string"
+        },
+        "minSize": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minsize"
+        }
+      },
+      "title": "Spacer",
+      "type": "object"
+    },
+    "Spacing": {
+      "deprecated": true,
+      "description": "Shorthand spacing values applied to a widget.",
+      "properties": {
+        "top": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Top"
+        },
+        "right": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Right"
+        },
+        "bottom": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Bottom"
+        },
+        "left": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Left"
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "X"
+        },
+        "y": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Y"
+        }
+      },
+      "title": "Spacing",
+      "type": "object"
+    },
+    "Text": {
+      "deprecated": true,
+      "description": "Widget rendering plain text with typography controls.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Text",
+          "default": "Text",
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "streaming": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Streaming"
+        },
+        "italic": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Italic"
+        },
+        "lineThrough": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Linethrough"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "enum": [
+                "normal",
+                "medium",
+                "semibold",
+                "bold"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weight"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "textAlign": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Textalign"
+        },
+        "truncate": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Truncate"
+        },
+        "minLines": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minlines"
+        },
+        "maxLines": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxlines"
+        },
+        "editable": {
+          "anyOf": [
+            {
+              "const": false,
+              "type": "boolean"
+            },
+            {
+              "$ref": "#/$defs/EditableProps"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Editable"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "Text",
+      "type": "object"
+    },
+    "Textarea": {
+      "deprecated": true,
+      "description": "Multiline text input component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Textarea",
+          "default": "Textarea",
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "defaultValue": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Defaultvalue"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required"
+        },
+        "pattern": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pattern"
+        },
+        "placeholder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Placeholder"
+        },
+        "autoSelect": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autoselect"
+        },
+        "autoFocus": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autofocus"
+        },
+        "disabled": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Disabled"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "enum": [
+                "soft",
+                "outline"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Variant"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "gutterSize": {
+          "anyOf": [
+            {
+              "enum": [
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Guttersize"
+        },
+        "rows": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rows"
+        },
+        "autoResize": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autoresize"
+        },
+        "maxRows": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxrows"
+        },
+        "allowAutofillExtensions": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Allowautofillextensions"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Textarea",
+      "type": "object"
+    },
+    "ThemeColor": {
+      "deprecated": true,
+      "description": "Color values for light and dark themes.",
+      "properties": {
+        "dark": {
+          "title": "Dark",
+          "type": "string"
+        },
+        "light": {
+          "title": "Light",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dark",
+        "light"
+      ],
+      "title": "ThemeColor",
+      "type": "object"
+    },
+    "Title": {
+      "deprecated": true,
+      "description": "Widget rendering prominent headline text.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Title",
+          "default": "Title",
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/$defs/ThemeColor"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Color"
+        },
+        "weight": {
+          "anyOf": [
+            {
+              "enum": [
+                "normal",
+                "medium",
+                "semibold",
+                "bold"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weight"
+        },
+        "size": {
+          "anyOf": [
+            {
+              "enum": [
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "4xl",
+                "5xl"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Size"
+        },
+        "textAlign": {
+          "anyOf": [
+            {
+              "enum": [
+                "start",
+                "center",
+                "end"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Textalign"
+        },
+        "truncate": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Truncate"
+        },
+        "maxLines": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maxlines"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "Title",
+      "type": "object"
+    },
+    "Transition": {
+      "deprecated": true,
+      "description": "Wrapper enabling transitions for a child component.",
+      "properties": {
+        "key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Key"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "type": {
+          "const": "Transition",
+          "default": "Transition",
+          "title": "Type",
+          "type": "string"
+        },
+        "children": {
+          "anyOf": [
+            {
+              "discriminator": {
+                "mapping": {
+                  "Badge": "#/$defs/Badge",
+                  "Box": "#/$defs/Box",
+                  "Button": "#/$defs/Button",
+                  "Caption": "#/$defs/Caption",
+                  "Chart": "#/$defs/Chart",
+                  "Checkbox": "#/$defs/Checkbox",
+                  "Col": "#/$defs/Col",
+                  "DatePicker": "#/$defs/DatePicker",
+                  "Divider": "#/$defs/Divider",
+                  "Form": "#/$defs/Form",
+                  "Icon": "#/$defs/Icon",
+                  "Image": "#/$defs/Image",
+                  "Input": "#/$defs/Input",
+                  "Label": "#/$defs/Label",
+                  "ListViewItem": "#/$defs/ListViewItem",
+                  "Markdown": "#/$defs/Markdown",
+                  "RadioGroup": "#/$defs/RadioGroup",
+                  "Row": "#/$defs/Row",
+                  "Select": "#/$defs/Select",
+                  "Spacer": "#/$defs/Spacer",
+                  "Text": "#/$defs/Text",
+                  "Textarea": "#/$defs/Textarea",
+                  "Title": "#/$defs/Title",
+                  "Transition": "#/$defs/Transition"
+                },
+                "propertyName": "type"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/Text"
+                },
+                {
+                  "$ref": "#/$defs/Title"
+                },
+                {
+                  "$ref": "#/$defs/Caption"
+                },
+                {
+                  "$ref": "#/$defs/Chart"
+                },
+                {
+                  "$ref": "#/$defs/Badge"
+                },
+                {
+                  "$ref": "#/$defs/Markdown"
+                },
+                {
+                  "$ref": "#/$defs/Box"
+                },
+                {
+                  "$ref": "#/$defs/Row"
+                },
+                {
+                  "$ref": "#/$defs/Col"
+                },
+                {
+                  "$ref": "#/$defs/Divider"
+                },
+                {
+                  "$ref": "#/$defs/Icon"
+                },
+                {
+                  "$ref": "#/$defs/Image"
+                },
+                {
+                  "$ref": "#/$defs/ListViewItem"
+                },
+                {
+                  "$ref": "#/$defs/Button"
+                },
+                {
+                  "$ref": "#/$defs/Checkbox"
+                },
+                {
+                  "$ref": "#/$defs/Spacer"
+                },
+                {
+                  "$ref": "#/$defs/Select"
+                },
+                {
+                  "$ref": "#/$defs/DatePicker"
+                },
+                {
+                  "$ref": "#/$defs/Form"
+                },
+                {
+                  "$ref": "#/$defs/Input"
+                },
+                {
+                  "$ref": "#/$defs/Label"
+                },
+                {
+                  "$ref": "#/$defs/RadioGroup"
+                },
+                {
+                  "$ref": "#/$defs/Textarea"
+                },
+                {
+                  "$ref": "#/$defs/Transition"
+                }
+              ]
+            },
+            {
+              "$ref": "#/$defs/DynamicWidgetComponent"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Transition",
+      "type": "object"
+    },
+    "WidgetStatusWithFavicon": {
+      "deprecated": true,
+      "description": "Widget status representation using a favicon.",
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "favicon": {
+          "title": "Favicon",
+          "type": "string"
+        },
+        "frame": {
+          "title": "Frame",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "WidgetStatusWithFavicon",
+      "type": "object"
+    },
+    "WidgetStatusWithIcon": {
+      "deprecated": true,
+      "description": "Widget status representation using an icon.",
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "icon": {
+          "anyOf": [
+            {
+              "enum": [
+                "agent",
+                "analytics",
+                "atom",
+                "batch",
+                "bolt",
+                "book-open",
+                "book-closed",
+                "book-clock",
+                "bug",
+                "calendar",
+                "chart",
+                "check",
+                "check-circle",
+                "check-circle-filled",
+                "chevron-left",
+                "chevron-right",
+                "circle-question",
+                "clock",
+                "compass",
+                "confetti",
+                "cube",
+                "desktop",
+                "document",
+                "dot",
+                "dots-horizontal",
+                "dots-vertical",
+                "empty-circle",
+                "external-link",
+                "globe",
+                "keys",
+                "lab",
+                "images",
+                "info",
+                "lifesaver",
+                "lightbulb",
+                "mail",
+                "map-pin",
+                "maps",
+                "mobile",
+                "name",
+                "notebook",
+                "notebook-pencil",
+                "page-blank",
+                "phone",
+                "play",
+                "plus",
+                "profile",
+                "profile-card",
+                "reload",
+                "star",
+                "star-filled",
+                "search",
+                "sparkle",
+                "sparkle-double",
+                "square-code",
+                "square-image",
+                "square-text",
+                "suitcase",
+                "settings-slider",
+                "user",
+                "wreath",
+                "write",
+                "write-alt",
+                "write-alt2"
+              ],
+              "type": "string"
+            },
+            {
+              "pattern": "^vendor:",
+              "type": "string"
+            },
+            {
+              "pattern": "^lucide:",
+              "type": "string"
+            }
+          ],
+          "title": "Icon"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "WidgetStatusWithIcon",
+      "type": "object"
+    },
+    "XAxisConfig": {
+      "deprecated": true,
+      "description": "Configuration object for the X axis.",
+      "properties": {
+        "dataKey": {
+          "title": "Datakey",
+          "type": "string"
+        },
+        "hide": {
+          "title": "Hide",
+          "type": "boolean"
+        },
+        "labels": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Labels",
+          "type": "object"
+        }
+      },
+      "required": [
+        "dataKey"
+      ],
+      "title": "XAxisConfig",
+      "type": "object"
+    }
+  },
+  "deprecated": true,
+  "description": "Container component for rendering collections of list items.",
+  "properties": {
+    "key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Key"
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Id"
+    },
+    "type": {
+      "const": "ListView",
+      "default": "ListView",
+      "title": "Type",
+      "type": "string"
+    },
+    "children": {
+      "items": {
+        "$ref": "#/$defs/ListViewItem"
+      },
+      "title": "Children",
+      "type": "array"
+    },
+    "limit": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "const": "auto",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Limit"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/WidgetStatusWithFavicon"
+        },
+        {
+          "$ref": "#/$defs/WidgetStatusWithIcon"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
+    },
+    "theme": {
+      "anyOf": [
+        {
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Theme"
+    }
+  },
+  "required": [
+    "children"
+  ],
+  "title": "ListView",
+  "type": "object"
+}
