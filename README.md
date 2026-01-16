@@ -1,5 +1,15 @@
 # TypeScript ChatKit
 
+> ⚠️ **Note**: After creating this project, I discovered an existing community implementation: [chatkit-ts by Patrick Kabwe](https://github.com/patrickkabwe/chatkit-ts). His package is more complete with server abstractions, store interfaces, and agent integration. I recommend using his package instead:
+>
+> ```bash
+> npm install chatkit-ts
+> ```
+>
+> This repository remains as a reference implementation and learning exercise.
+
+---
+
 A TypeScript implementation of the OpenAI ChatKit server SDK for building rich chat interfaces with widgets and streaming.
 
 ## Installation
